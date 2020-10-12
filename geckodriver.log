@@ -189,3 +189,52 @@ exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:1
 exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:103:22
 
 JavaScript error: resource://devtools/client/framework/devtools.js, line 733: TypeError: inspector is undefined
+1602491265197	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofilezCxyIf"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: "Could not write session state file " (new Error("_initWorker called too early! Please read the session file from disk first.", "resource:///modules/sessionstore/SessionFile.jsm", 375)) "_initWorker/<@resource:///modules/sessionstore/SessionFile.jsm:375:15\n_initWorker@resource:///modules/sessionstore/SessionFile.jsm:368:12\n_postToWorker@resource:///modules/sessionstore/SessionFile.jsm:410:16\nwrite@resource:///modules/sessionstore/SessionFile.jsm:448:24\nwrite@resource:///modules/sessionstore/SessionFile.jsm:75:32\n_writeState@resource:///modules/sessionstore/SessionSaver.jsm:360:24\n_saveState@resource:///modules/sessionstore/SessionSaver.jsm:294:17\n_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm:344:10\nsaveStateAsyncWhenIdle@resource:///modules/sessionstore/SessionSaver.jsm:191:14\ncallback@resource://gre/modules/Timer.jsm:127:16\n"
+1602491269576	Marionette	INFO	Listening on port 56208
+1602491269590	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602491307055	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofile8K9kf7"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: "Could not write session state file " (new Error("_initWorker called too early! Please read the session file from disk first.", "resource:///modules/sessionstore/SessionFile.jsm", 375)) "_initWorker/<@resource:///modules/sessionstore/SessionFile.jsm:375:15\n_initWorker@resource:///modules/sessionstore/SessionFile.jsm:368:12\n_postToWorker@resource:///modules/sessionstore/SessionFile.jsm:410:16\nwrite@resource:///modules/sessionstore/SessionFile.jsm:448:24\nwrite@resource:///modules/sessionstore/SessionFile.jsm:75:32\n_writeState@resource:///modules/sessionstore/SessionSaver.jsm:360:24\n_saveState@resource:///modules/sessionstore/SessionSaver.jsm:294:17\n_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm:344:10\nsaveStateAsyncWhenIdle@resource:///modules/sessionstore/SessionSaver.jsm:191:14\ncallback@resource://gre/modules/Timer.jsm:127:16\n"
+1602491311627	Marionette	INFO	Listening on port 56267
+1602491312048	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602492433827	Marionette	INFO	Stopped listening on port 56267
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
