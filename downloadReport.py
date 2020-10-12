@@ -1,4 +1,6 @@
 # -*- coding: UTF-8 -*-
+import threading
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -10,7 +12,7 @@ from sqlConn import connSql
 
 TABLENAME = "cjrkcompanyinfo"
 
-class Login(object):
+class ReportCrawler(object):
 
     def __init__(self):
         self.sql = connSql()
@@ -55,10 +57,11 @@ class Login(object):
     def getHtml(self, link):
         self.driver.get(link)
         self.wait.until(EC.presence_of_element_located((By.ID, "form1")))
-
-    def dataProcessing(self):
-        print('--------------dataProcessing---------------')
         htmlText = self.driver.page_source
+        return htmlText
+
+    def dataProcessing(self, htmlText):
+        print('--------------dataProcessing---------------')
         html = etree.HTML(htmlText)
         for index, labTR in enumerate(html.xpath("//table[@class='table']/tbody/tr")):
             if index > 0 and index <= 20:
@@ -76,7 +79,22 @@ class Login(object):
                 if not self.sql.select_data(table_name=TABLENAME, item_info=item_info):
                     self.sql.insert_data(table_name=TABLENAME, item_info=comItem)
 
+    def __crawler(self, semaphore, link):
+        semaphore.acquire()
+        _content = self.getHtml(link)
+        self.dataProcessing(_content)
+        semaphore.release()
+
+    def taskManager(self, linkList, func):
+        semaphore = threading.Semaphore(2)
+        ts = [threading.Thread(target=func, args=(semaphore, link,)) for link in linkList]
+        [t.start() for t in ts]
+        [t.join() for t in ts]
+
+    def start(self):
+        urlList = self.getUrlFromSql()
+        self.taskManager(urlList, self.__crawler)
 
 if __name__ == '__main__':
-    login = Login()
+    login = ReportCrawler()
     login.start()

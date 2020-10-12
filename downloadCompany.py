@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 from selenium import webdriver
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -11,7 +10,7 @@ from sqlConn import connSql
 
 TABLENAME = "cjrkcompanyinfo"
 
-class Login(object):
+class CompanyCrawler(object):
 
     def __init__(self):
         self.sql = connSql()
@@ -19,7 +18,6 @@ class Login(object):
         初始化
         """
         self.mainpage = 'http://cjrk.hbcic.net.cn/xxgs/index.aspx'
-        # self.mainpage = 'http://cjrk.hbcic.net.cn/xxgs/QyManage/QysxViewJzy.aspx?sxbh=263922'
         self.__create_driver()
         self.wait = WebDriverWait(self.driver, 60)
 
@@ -99,5 +97,5 @@ class Login(object):
 
 
 if __name__ == '__main__':
-    login = Login()
+    login = CompanyCrawler()
     login.start()
