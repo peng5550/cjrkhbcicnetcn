@@ -1,0 +1,674 @@
+<html>
+<meta charset="utf-8">
+<head>
+    <style type="text/css">
+        html, body, form
+        {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            font-family: arial,tahoma,Hiragino Sans GB,Microsoft YaHei,sans-serif;
+            color: #4C4C4C;
+            background-color: White;
+        }
+        .table
+        {
+            border-top: 1px solid #666666;
+            border-left: 1px solid #666666;
+        }
+        .table td
+        {
+            height: 30px;
+            line-height: 25px;
+            border-right: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+            padding-left: 2px;
+        }
+        .table td.head
+        {
+            font-weight: bold;
+            background-color: #D5F1FF;
+        }
+        .txt
+        {
+            border: 1px solid #666666;
+            height: 20px;
+            line-height: 20px;
+        }
+        .btnSearch
+        {
+            width: 100px;
+            height: 26px;
+            border-style: none;
+            background-image: url(../images/zcry/查询.jpg);
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        .line
+        {
+            height: 10px; /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ff0000'); /* IE6,IE7 /
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ff0000')"; / IE8 */
+        }
+        .fieldset
+        {
+            border: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 1em;
+            display: block;
+            margin-inline-start: 2px;
+            margin-inline-end: 2px;
+            padding-block-start: 0.35em;
+            padding-inline-start: 0.75em;
+            padding-inline-end: 0.75em;
+            padding-block-end: 0.625em;
+            min-inline-size: min-content;
+        }
+        ul
+        {
+            height: 80px;
+            list-style: none;
+            position: fixed;
+            right: -10px;
+            top: 30%;
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+            padding-right: 10px;
+            margin-bottom: 5px;
+        }
+        li
+        {
+            display: list-item;
+            text-align: -webkit-match-parent;
+        }
+        ul li
+        {
+            margin: 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin: 10px;
+            background-color: #fff4b9;
+        }
+        ul #tishi
+        {
+            border: 0px solid #ccc;
+            background-color: rgba(0, 0, 0, 0.00);
+            font-family: YouYuan;
+            font-size: 12px;
+            color: #3e3b3b;
+            font-weight: 600;
+        }
+
+        ul li a
+        {
+            text-decoration: none;
+            color: #4C6C9D;
+        }
+        ul li a:hover
+        {
+            color: red;
+        }
+
+        .dibu
+        {
+            float: left;
+            width: 1140px;
+            margin-top: 17px;
+            height: auto;
+            line-height: 30px;
+            text-align: center;
+            display: block;
+            background-color: #2A70CF;
+            color: White;
+        }
+    </style>
+</head>
+<table cellpadding="0" cellspacing="0" width="1140px">
+    <tbody>
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <img src="../images/zjt/zjt.jpg">-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td align="left" height="30px" style="background-image: url(../images/location_bg.png)">-->
+<!--            <img src="../images/zjt/location_pic.jpg" style="vertical-align: middle;">当前位置—&gt;<span id="labNowPlace">湖北省企业资质申报和审批信息公示公开</span>-->
+<!--        </td>-->
+<!--    </tr>-->
+    <tr>
+        <td id="tdTitle" align="center" valign="middle" height="60px" style="font-size: 24px;
+                            font-weight: bold; background-color: #D5F1FF; color: Black;">
+            企业资质申报和审批信息公示公开
+        </td>
+
+    </tr>
+
+    <tr>
+        <td align="left" width="100%">
+
+            <fieldset id="fs1" class="fieldset">
+                <legend style="font-size: 18px; font-weight: bold; color: #456892; padding-bottom: 8px;">
+                    企业基本情况
+                </legend>
+                <table cellpadding="0" cellspacing="0" width="100%" class="table" style="border-top: 1px solid #345678;
+                                    table-layout: fixed;">
+                    <tbody>
+                    <tr>
+                        <td width="22%" align="center" class="head">
+                            变更内容
+                        </td>
+                        <td width="29%" align="center" class="head">
+                            拟吸收合并前现有资质及等级
+                        </td>
+                        <td width="29%" align="center" class="head">
+                            拟吸收合并后资质及等级
+                        </td>
+                        <td width="8%" align="center" class="head">
+                            法定代表人
+                        </td>
+                        <td width="12%" align="center" class="head">
+                            注册净资产（万元）
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" rowspan="2">
+                            原企业：湖北星德建设工程有限公司
+                        </td>
+                        <td align="center">
+                            防水防腐保温工程专业承包贰级<br>建筑装修装饰工程专业承包贰级<br>建筑幕墙工程专业承包贰级<br>钢结构工程专业承包叁级<br>
+                        </td>
+                        <td align="center">
+                            防水防腐保温工程专业承包贰级<br>建筑装修装饰工程专业承包贰级<br>建筑幕墙工程专业承包贰级<br>钢结构工程专业承包叁级<br>
+                        </td>
+                        <td align="center" rowspan="2">
+                            文思凡
+                        </td>
+                        <td align="center" rowspan="2">
+                            1000万人民币
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" width="100%" style="border: 0;">
+                                <tbody>
+                                <tr>
+                                    <td width="75px" style="border: 0;">
+                                        证书编号：
+                                    </td>
+                                    <td style="border: 0;">
+                                        D242146555&nbsp;(2024-12-18)<br>D342256225&nbsp;(2024-12-03)<br>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </td>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" width="100%" style="border: 0;">
+                                <tbody>
+                                <tr>
+                                    <td width="75px" style="border: 0;">
+                                        证书编号：
+                                    </td>
+                                    <td style="border: 0;">
+                                        D242146555&nbsp;(2024-12-18)<br>D342256225&nbsp;(2024-12-03)<br>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" rowspan="2">
+                            新企业：榕地建设集团有限公司
+                        </td>
+                        <td align="center">
+                            防水防腐保温工程专业承包贰级<br>建筑装修装饰工程专业承包壹级<br>建筑幕墙工程专业承包壹级<br>建筑工程施工总承包叁级<br>市政公用工程施工总承包叁级<br>机电工程施工总承包叁级<br>钢结构工程专业承包叁级<br>地基基础工程专业承包叁级<br>古建筑工程专业承包叁级<br>环保工程专业承包叁级<br>
+                        </td>
+                        <td align="center">
+                            防水防腐保温工程专业承包贰级<br>建筑装修装饰工程专业承包壹级<br>建筑幕墙工程专业承包壹级<br>建筑工程施工总承包叁级<br>市政公用工程施工总承包叁级<br>机电工程施工总承包叁级<br>钢结构工程专业承包叁级<br>地基基础工程专业承包叁级<br>古建筑工程专业承包叁级<br>环保工程专业承包叁级<br><span
+                                style="color:green;">建筑工程施工总承包叁级</span><br><span style="color:green;">机电工程施工总承包叁级</span><br><span
+                                style="color:green;">地基基础工程专业承包叁级</span><br><span
+                                style="color:green;">市政公用工程施工总承包叁级</span><br>
+                        </td>
+                        <td align="center" rowspan="2">
+                            庄钟黄
+                        </td>
+                        <td align="center" rowspan="2">
+                            6168万人民币
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" width="100%" style="border: 0;">
+                                <tbody>
+                                <tr>
+                                    <td width="75px" style="border: 0;">
+                                        证书编号：
+                                    </td>
+                                    <td style="border: 0;">
+                                        D242013098&nbsp;(2022-01-01)<br>D342099741&nbsp;(2022-01-01)<br>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td align="center">
+                            <table cellpadding="0" cellspacing="0" width="100%" style="border: 0;">
+                                <tbody>
+                                <tr>
+                                    <td width="75px" style="border: 0;">
+                                        证书编号：
+                                    </td>
+                                    <td style="border: 0;">
+                                        D242013098&nbsp;(2022-01-01)<br>D342099741&nbsp;(2022-01-01)<br>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset id="fs2" class="fieldset">
+                <legend style="font-size: 18px; font-weight: bold; color: #456892; padding-bottom: 8px;">
+                    技术负责人情况
+                </legend>
+                <table cellpadding="0" cellspacing="0" width="100%" class="table" style="border-top: 1px solid #345678;
+                                    table-layout: fixed;">
+                    <tbody>
+                    <tr>
+                        <td width="4%" align="center" class="head">
+                            序号
+                        </td>
+                        <td width="26%" align="center" class="head">
+                            内容
+                        </td>
+                        <td width="6%" align="center" class="head">
+                            姓名
+                        </td>
+                        <td width="6%" align="center" class="head">
+                            年龄
+                        </td>
+                        <td width="14%" align="center" class="head">
+                            负责资质类别
+                        </td>
+                        <td width="9%" align="center" class="head">
+                            职称
+                        </td>
+                        <td width="15%" align="center" class="head">
+                            职称专业
+                        </td>
+                        <td width="12%" align="center" class="head">
+                            建造师注册证书编号
+                        </td>
+                        <td width="8%" align="center" class="head">
+                            管理经历
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            1
+                        </td>
+                        <td align="center">
+                            新：榕地建设集团有限公司
+                        </td>
+                        <td align="center">
+                            陈康
+                        </td>
+                        <td align="center">
+                            38
+                        </td>
+                        <td align="center">
+                            地基基础工程专业承包叁级
+                        </td>
+                        <td align="center">
+                            工程师
+                        </td>
+                        <td align="center">
+                            工民建
+                        </td>
+                        <td align="center">
+                            无
+                        </td>
+                        <td align="center">
+                            7年
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            2
+                        </td>
+                        <td align="center">
+                            新：榕地建设集团有限公司
+                        </td>
+                        <td align="center">
+                            陈金安
+                        </td>
+                        <td align="center">
+                            50
+                        </td>
+                        <td align="center">
+                            机电工程施工总承包叁级
+                        </td>
+                        <td align="center">
+                            工程师
+                        </td>
+                        <td align="center">
+                            机械
+                        </td>
+                        <td align="center">
+                            无
+                        </td>
+                        <td align="center">
+                            7年
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            3
+                        </td>
+                        <td align="center">
+                            新：榕地建设集团有限公司
+                        </td>
+                        <td align="center">
+                            杜胜利
+                        </td>
+                        <td align="center">
+                            38
+                        </td>
+                        <td align="center">
+                            建筑工程施工总承包叁级
+                        </td>
+                        <td align="center">
+                            工程师
+                        </td>
+                        <td align="center">
+                            建筑工程
+                        </td>
+                        <td align="center">
+                            无
+                        </td>
+                        <td align="center">
+                            6年
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            4
+                        </td>
+                        <td align="center">
+                            新：榕地建设集团有限公司
+                        </td>
+                        <td align="center">
+                            周继咸
+                        </td>
+                        <td align="center">
+                            40
+                        </td>
+                        <td align="center">
+                            市政公用工程施工总承包叁级
+                        </td>
+                        <td align="center">
+                            工程师
+                        </td>
+                        <td align="center">
+                            给排水
+                        </td>
+                        <td align="center">
+                            无
+                        </td>
+                        <td align="center">
+                            9年
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset id="fs3" class="fieldset">
+                <legend style="font-size: 18px; font-weight: bold; color: #456892; padding-bottom: 8px;">
+                    注册建造师情况（分立、合并最低等级资质考核）
+                </legend>
+                <table cellpadding="0" cellspacing="0" width="100%" class="table" style="border-top: 1px solid #345678;
+                                    table-layout: fixed;">
+                    <tbody>
+                    <tr>
+                        <td width="4%" align="center" class="head">
+                            序号
+                        </td>
+                        <td width="16%" align="center" class="head">
+                            姓名
+                        </td>
+                        <td width="20%" align="center" class="head">
+                            年龄
+                        </td>
+                        <td width="20%" align="center" class="head">
+                            专业
+                        </td>
+                        <td width="20%" align="center" class="head">
+                            级别
+                        </td>
+                        <td width="20%" align="center" class="head">
+                            证书编号
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            1
+                        </td>
+                        <td align="center">
+                            李博
+                        </td>
+                        <td align="center">
+                            29
+                        </td>
+                        <td align="center">
+                            建筑
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242192004953
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            2
+                        </td>
+                        <td align="center">
+                            景慧芳
+                        </td>
+                        <td align="center">
+                            28
+                        </td>
+                        <td align="center">
+                            建筑
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242181994831
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            3
+                        </td>
+                        <td align="center">
+                            张盼
+                        </td>
+                        <td align="center">
+                            27
+                        </td>
+                        <td align="center">
+                            建筑
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242181994283
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            4
+                        </td>
+                        <td align="center">
+                            黄洋
+                        </td>
+                        <td align="center">
+                            32
+                        </td>
+                        <td align="center">
+                            建筑
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242181989141
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            5
+                        </td>
+                        <td align="center">
+                            沈敏
+                        </td>
+                        <td align="center">
+                            36
+                        </td>
+                        <td align="center">
+                            建筑
+                        </td>
+                        <td align="center">
+                            一级
+                        </td>
+                        <td align="center">
+                            鄂142161623671
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            6
+                        </td>
+                        <td align="center">
+                            尹学操
+                        </td>
+                        <td align="center">
+                            27
+                        </td>
+                        <td align="center">
+                            市政
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242181995471
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            7
+                        </td>
+                        <td align="center">
+                            高环
+                        </td>
+                        <td align="center">
+                            32
+                        </td>
+                        <td align="center">
+                            市政
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242181991870
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            8
+                        </td>
+                        <td align="center">
+                            代艳强
+                        </td>
+                        <td align="center">
+                            30
+                        </td>
+                        <td align="center">
+                            市政
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242181989661
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center">
+                            9
+                        </td>
+                        <td align="center">
+                            常亮
+                        </td>
+                        <td align="center">
+                            33
+                        </td>
+                        <td align="center">
+                            市政
+                        </td>
+                        <td align="center">
+                            二级
+                        </td>
+                        <td align="center">
+                            鄂242171881521
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </fieldset>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div class="dibu">
+                Copyright @ 2011 湖北省住房和城乡建设厅 All rights reserved 鄂ICP备05016425号-2<br>
+                主办：湖北省住房和城乡建设厅 承办：湖北省建设信息中心
+                <br>
+                地址：武汉市武昌中南路12号 邮政编码：430071
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</html>
