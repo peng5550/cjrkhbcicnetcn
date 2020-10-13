@@ -56,7 +56,6 @@ class ReportCrawler(object):
         return htmlText
 
     def dataProcessing(self, htmlText, companyName, link):
-        print('--------------dataProcessing---------------')
         html0 = etree.HTML(htmlText)
         labTDListA = [labTD.xpath("text()")[0].strip() for labTD in
                       html0.xpath("//*[@id='fs2']/table[@class='table']/tbody/tr[1]/td")]
@@ -243,29 +242,42 @@ class ReportCrawler(object):
             f.write(f"{htmlMakeOne}\n{tableHtmlText}\n{htmlMakeTwo}")
 
 
-    def __crawler(self, semaphore, link, companyName):
-        semaphore.acquire()
-        try:
-            driver = self.__create_driver()
-            wait = WebDriverWait(driver, 60)
-            _content = self.getHtml(driver, wait, link)
-            self.dataProcessing(_content, companyName, link)
-            self.__quit_driver(driver)
-        except Exception as e:
-            print(e.args)
-            with open("exception.txt", "a+", encoding="utf-8")as file:
-                file.write(link+"\n")
-        semaphore.release()
+    def __crawler(self, urlList):
+        driver = self.__create_driver()
+        wait = WebDriverWait(driver, 60)
+        for name, link in urlList:
+            try:
+                _content = self.getHtml(driver, wait, link)
+                self.dataProcessing(_content, name, link)
+            except Exception as e:
+                print(e.args)
+                with open("exception.txt", "a+", encoding="utf-8")as file:
+                    file.write(link+"\n")
+
+    # def __crawler(self, semaphore, link, companyName):
+    #     semaphore.acquire()
+    #     try:
+    #         driver = self.__create_driver()
+    #         wait = WebDriverWait(driver, 60)
+    #         _content = self.getHtml(driver, wait, link)
+    #         self.dataProcessing(_content, companyName, link)
+    #         self.__quit_driver(driver)
+    #     except Exception as e:
+    #         print(e.args)
+    #         with open("exception.txt", "a+", encoding="utf-8")as file:
+    #             file.write(link+"\n")
+    #     semaphore.release()
 
     def taskManager(self, linkList, func):
-        semaphore = threading.Semaphore(4)
+        semaphore = threading.Semaphore(2)
         ts = [threading.Thread(target=func, args=(semaphore, link, name,)) for name, link in linkList]
         [t.start() for t in ts]
         [t.join() for t in ts]
 
     def start(self):
         urlList = self.getUrlFromSql()
-        self.taskManager(urlList, self.__crawler)
+        # self.taskManager(urlList, self.__crawler)
+        self.__crawler(urlList)
 
 if __name__ == '__main__':
     login = ReportCrawler()

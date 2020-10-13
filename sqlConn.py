@@ -8,6 +8,10 @@ class connSql(object):
                                     charset="utf8")
         self.db = self.conn.cursor()
 
+    def __del__(self):
+        self.db.close()
+        self.conn.close()
+
     def insert_data(self, table_name, item_info):
         keys = ', '.join(list(item_info.keys()))
         values = ', '.join(['%s'] * len(item_info))
@@ -33,20 +37,25 @@ class connSql(object):
         self.db.execute(select_sql)
         res = self.db.fetchall()
         if res:
-            return True
+            return res
         else:
             return False
 
     def select_link(self, table_name):
-        select_sql = "select name, comUrl from {} limit 5".format(table_name)
+        select_sql = "select name, comUrl from {}".format(table_name)
         self.conn.ping(reconnect=True)
         self.db.execute(select_sql)
         res = self.db.fetchall()
         if res:
-            print(res)
             return res
 
-
+    def select_com(self, table_name, comName):
+        select_sql = "select * from {} where name='{}';".format(table_name, comName)
+        self.conn.ping(reconnect=True)
+        self.db.execute(select_sql)
+        res = self.db.fetchall()
+        if res:
+            return res
 
 if __name__ == '__main__':
     sql = connSql()
