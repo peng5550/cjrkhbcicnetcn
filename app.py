@@ -31,16 +31,19 @@ class Application(mtk.Frame):
         self.searchBtn = mtk.Button(self.searchBox, text="查 询", command=lambda: self.thread_it(self.searchData))
         self.searchBtn.place(x=250, y=10, width=80, height=30)
 
+        self.crawlerBtn = mtk.Button(self.searchBox, text="获取数据")
+        self.crawlerBtn.place(x=380, y=10, width=80, height=30)
+
         # 数据展示
         title = ['1', '2', '3', '4', '5', '6']
         self.box = ttk.Treeview(self.searchBox, columns=title, show='headings')
         self.box.place(x=15, y=70, width=630, height=270)
-        self.box.column('1', width=50, anchor='center')
+        self.box.column('1', width=30, anchor='center')
         self.box.column('2', width=80, anchor='center')
-        self.box.column('3', width=50, anchor='center')
+        self.box.column('3', width=30, anchor='center')
         self.box.column('4', width=80, anchor='center')
         self.box.column('5', width=100, anchor='center')
-        self.box.column('6', width=200, anchor='center')
+        self.box.column('6', width=240, anchor='center')
         self.box.heading('1', text='序号')
         self.box.heading('2', text='姓名')
         self.box.heading('3', text='年龄')
