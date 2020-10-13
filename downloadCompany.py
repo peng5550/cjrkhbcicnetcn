@@ -14,9 +14,6 @@ class CompanyCrawler(object):
 
     def __init__(self):
         self.sql = connSql()
-        """
-        初始化
-        """
         self.mainpage = 'http://cjrk.hbcic.net.cn/xxgs/index.aspx'
         self.__create_driver()
         self.wait = WebDriverWait(self.driver, 60)
@@ -47,12 +44,10 @@ class CompanyCrawler(object):
     def start(self):
         self.driver.get(self.mainpage)
         self.driver.maximize_window()
-        # time.sleep(10)
-        # print(self.driver.page_source)
         self.search_data()
+        self.goNextPage()
 
     def search_data(self):
-
         self.wait.until(EC.presence_of_element_located((By.ID, 'form1')))
         info_sqlx = self.wait.until(EC.element_to_be_clickable((By.ID, 'ddlSqlx')))
         info_sqlx.click()
@@ -71,9 +66,21 @@ class CompanyCrawler(object):
     def goNextPage(self):
         now_page = self.driver.find_element_by_id("labNowPage").text
         total_page = self.driver.find_element_by_id("labPageCount").text
-        if int(now_page) < int(total_page):
-            next_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnNext')))
-            next_page_btn.click()
+
+        last_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnLast')))
+        last_page_btn.click()
+
+        while int(now_page) <= int(total_page):
+            print("-----------------当前页：{}---------------------".format(now_page))
+            # next_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnNext')))
+            # next_page_btn.click()
+            pre_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnPre')))
+            pre_page_btn.click()
+            self.wait.until(EC.presence_of_element_located((By.ID, 'form1')))
+            self.dataProcessing()
+            now_page = self.driver.find_element_by_id("labNowPage").text
+            total_page = self.driver.find_element_by_id("labPageCount").text
+
 
     def dataProcessing(self):
         print('--------------dataProcessing---------------')
@@ -81,19 +88,22 @@ class CompanyCrawler(object):
         html = etree.HTML(htmlText)
         for index, labTR in enumerate(html.xpath("//table[@class='table']/tbody/tr")):
             if index > 0 and index <= 20:
-                comItem = {
-                    "name": labTR.xpath("td[2]/a/text()")[0].strip(),
-                    "comUrl": "http://cjrk.hbcic.net.cn/xxgs/" + labTR.xpath("td[2]/a/@href")[0].strip(),
-                    "cls": "建筑业",
-                    "level": ", ".join(labTR.xpath("td[4]/text()")).strip().strip(","),
-                    "type": labTR.xpath("td[5]/text()")[0].strip(),
-                    "accCom": labTR.xpath("td[6]/text()")[0].strip(),
-                    "accDate": labTR.xpath("td[9]/text()")[0].strip(),
-                    "accStatus": labTR.xpath("td[10]/text()")[0].strip(),
-                }
-                item_info = {"comUrl": comItem["comUrl"]}
-                if not self.sql.select_data(table_name=TABLENAME, item_info=item_info):
-                    self.sql.insert_data(table_name=TABLENAME, item_info=comItem)
+                try:
+                    comItem = {
+                        "name": labTR.xpath("td[2]/a/text()")[0].strip(),
+                        "comUrl": "http://cjrk.hbcic.net.cn/xxgs/" + labTR.xpath("td[2]/a/@href")[0].strip(),
+                        "cls": "建筑业",
+                        "level": ", ".join(labTR.xpath("td[4]/text()")).strip().strip(","),
+                        "type": labTR.xpath("td[5]/text()")[0].strip(),
+                        "accCom": labTR.xpath("td[6]/text()")[0].strip(),
+                        "accDate": labTR.xpath("td[9]/text()")[0].strip(),
+                        "accStatus": labTR.xpath("td[10]/text()")[0].strip(),
+                    }
+                    item_info = {"comUrl": comItem["comUrl"]}
+                    if not self.sql.select_data(table_name=TABLENAME, item_info=item_info):
+                        self.sql.insert_data(table_name=TABLENAME, item_info=comItem)
+                except:
+                    print("http://cjrk.hbcic.net.cn/xxgs/" + labTR.xpath("td[2]/a/@href")[0].strip())
 
 
 if __name__ == '__main__':

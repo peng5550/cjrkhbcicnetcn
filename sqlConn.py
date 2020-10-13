@@ -14,6 +14,7 @@ class connSql(object):
         insert_sql = "insert into `{}`({})values({});".format(table_name, keys, values)
 
         try:
+            self.conn.ping(reconnect=True)
             self.db.execute(insert_sql, tuple(item_info.values()))
             self.conn.commit()
         except Exception as e:
@@ -28,7 +29,7 @@ class connSql(object):
         sql_string = ' and '.join(string_list)
 
         select_sql = "select * from {} where {};".format(table_name, sql_string)
-
+        self.conn.ping(reconnect=True)
         self.db.execute(select_sql)
         res = self.db.fetchall()
         if res:
@@ -37,7 +38,8 @@ class connSql(object):
             return False
 
     def select_link(self, table_name):
-        select_sql = "select comUrl from {}".format(table_name)
+        select_sql = "select name, comUrl from {} limit 5".format(table_name)
+        self.conn.ping(reconnect=True)
         self.db.execute(select_sql)
         res = self.db.fetchall()
         if res:
