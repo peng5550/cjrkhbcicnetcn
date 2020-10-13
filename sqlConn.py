@@ -57,6 +57,7 @@ class connSql(object):
         if res:
             return res
 
+
 if __name__ == '__main__':
     sql = connSql()
     sql.select_link(table_name="cjrkcompanyinfo")

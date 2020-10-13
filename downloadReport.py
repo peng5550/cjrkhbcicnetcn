@@ -15,7 +15,6 @@ sTABLENAME = "cjrkreport"
 if not os.path.exists(DATAPATH):
     os.makedirs(DATAPATH)
 
-
 class ReportCrawler(object):
 
     def __init__(self):

@@ -33,8 +33,6 @@ class Application(mtk.Frame):
         # 数据展示
         title = ['1', '2', '3', '4', '5', '6']
         self.box = ttk.Treeview(self.searchBox, columns=title, show='headings')
-        # style = ttk.Style()
-        # style.configure("Treeview.Heading", font=("思源黑体", 11, "bold"))
         self.box.place(x=10, y=70, width=430, height=170)
         self.box.column('1', width=50, anchor='center')
         self.box.column('2', width=80, anchor='center')
