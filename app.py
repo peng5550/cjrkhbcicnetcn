@@ -27,7 +27,7 @@ class Application(mtk.Frame):
         self.labNameText = mtk.Entry(self.searchBox)
         self.labNameText.place(x=70, y=10, width=100, height=30)
 
-        self.searchBtn = mtk.Button(self.searchBox, text="查 询")
+        self.searchBtn = mtk.Button(self.searchBox, text="查 询", command=self.thread_it(self.searchData))
         self.searchBtn.place(x=250, y=10, width=80, height=30)
 
         # 数据展示
@@ -85,9 +85,13 @@ class Application(mtk.Frame):
         for item in x:
             self.box.delete(item)
 
-    def searchData(self, name):
+    def searchData(self):
         self.deleteTree()
-        search_item = {"name": name}
+        search_name = self.labNameText.get().strip()
+        if not search_name:
+            return
+
+        search_item = {"name": search_name}
         res = self.sql.select_data(table_name=sTABLENAME, item_info=search_item)
         if res:
             index = 1
