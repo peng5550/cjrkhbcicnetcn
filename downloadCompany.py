@@ -106,5 +106,5 @@ class CompanyCrawler(object):
 
 
 if __name__ == '__main__':
-    login = CompanyCrawler()
-    login.start()
+    report = CompanyCrawler()
+    report.start()

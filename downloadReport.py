@@ -15,6 +15,7 @@ sTABLENAME = "cjrkreport"
 if not os.path.exists(DATAPATH):
     os.makedirs(DATAPATH)
 
+
 class ReportCrawler(object):
 
     def __init__(self):
@@ -45,8 +46,7 @@ class ReportCrawler(object):
 
     def getUrlFromSql(self):
         urlList = self.sql.select_link(table_name=TABLENAME)
-        return [[i[0],i[1]] for i in urlList if i]
-
+        return [[i[0], i[1]] for i in urlList if i]
 
     def getHtml(self, driver, wait, link):
         driver.get(link)
@@ -234,50 +234,31 @@ class ReportCrawler(object):
         '''
         for item in infoReportList:
             if not self.sql.select_data(table_name=sTABLENAME, item_info=item):
-                print(item)
                 self.sql.insert_data(table_name=sTABLENAME, item_info=item)
 
-        with open(f"./data/{companyName}.html", "w+", encoding="utf-8")as f:
-            f.write(f"{htmlMakeOne}\n{tableHtmlText}\n{htmlMakeTwo}")
-
+                with open(f"./data/{companyName}.html", "w+", encoding="utf-8")as f:
+                    f.write(f"{htmlMakeOne}\n{tableHtmlText}\n{htmlMakeTwo}")
 
     def __crawler(self, urlList):
         driver = self.__create_driver()
         wait = WebDriverWait(driver, 60)
+        index = 0
         for name, link in urlList:
+            print("爬取第{}/{}条".format(index, len(urlList)))
             try:
                 _content = self.getHtml(driver, wait, link)
                 self.dataProcessing(_content, name, link)
             except Exception as e:
                 print(e.args)
                 with open("exception.txt", "a+", encoding="utf-8")as file:
-                    file.write(link+"\n")
-
-    # def __crawler(self, semaphore, link, companyName):
-    #     semaphore.acquire()
-    #     try:
-    #         driver = self.__create_driver()
-    #         wait = WebDriverWait(driver, 60)
-    #         _content = self.getHtml(driver, wait, link)
-    #         self.dataProcessing(_content, companyName, link)
-    #         self.__quit_driver(driver)
-    #     except Exception as e:
-    #         print(e.args)
-    #         with open("exception.txt", "a+", encoding="utf-8")as file:
-    #             file.write(link+"\n")
-    #     semaphore.release()
-
-    def taskManager(self, linkList, func):
-        semaphore = threading.Semaphore(2)
-        ts = [threading.Thread(target=func, args=(semaphore, link, name,)) for name, link in linkList]
-        [t.start() for t in ts]
-        [t.join() for t in ts]
+                    file.write(link + "\n")
+            index += 1
 
     def start(self):
         urlList = self.getUrlFromSql()
-        # self.taskManager(urlList, self.__crawler)
         self.__crawler(urlList)
 
+
 if __name__ == '__main__':
-    login = ReportCrawler()
-    login.start()
+    report = ReportCrawler()
+    report.start()

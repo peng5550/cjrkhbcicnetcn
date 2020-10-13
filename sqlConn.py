@@ -42,7 +42,7 @@ class connSql(object):
             return False
 
     def select_link(self, table_name):
-        select_sql = "select name, comUrl from {} group by name;".format(table_name)
+        select_sql = "select name, comUrl from {} where id>9383 group by name;".format(table_name)
         self.conn.ping(reconnect=True)
         self.db.execute(select_sql)
         res = self.db.fetchall()
