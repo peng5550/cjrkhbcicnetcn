@@ -4,7 +4,11 @@ from downloadReport import ReportCrawler
 
 
 def start_task():
-    pass
+    com = CompanyCrawler()
+    com.start()
+    report = ReportCrawler()
+    report.start()
+
 
 
 if __name__ == '__main__':

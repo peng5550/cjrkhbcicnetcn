@@ -14,8 +14,8 @@ class CompanyCrawler(object):
     def __init__(self):
         self.sql = connSql()
         self.mainpage = 'http://cjrk.hbcic.net.cn/xxgs/index.aspx'
-        self.__create_driver()
-        self.wait = WebDriverWait(self.driver, 60)
+        self.now_page = 0
+        self.total_page = 0
 
     def __create_driver(self):
         # 创建driver
@@ -41,6 +41,8 @@ class CompanyCrawler(object):
             self.driver.quit()
 
     def start(self):
+        self.__create_driver()
+        self.wait = WebDriverWait(self.driver, 60)
         self.driver.get(self.mainpage)
         self.driver.maximize_window()
         self.search_data()
@@ -63,26 +65,27 @@ class CompanyCrawler(object):
         self.dataProcessing()
 
     def goNextPage(self):
-        now_page = self.driver.find_element_by_id("labNowPage").text
-        total_page = self.driver.find_element_by_id("labPageCount").text
+        self.now_page = self.driver.find_element_by_id("labNowPage").text
+        self.total_page = self.driver.find_element_by_id("labPageCount").text
 
-        last_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnLast')))
-        last_page_btn.click()
+        # last_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnLast')))
+        # last_page_btn.click()
 
-        while int(now_page) <= int(total_page):
-            print("-----------------当前页：{}---------------------".format(now_page))
-            # next_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnNext')))
-            # next_page_btn.click()
-            pre_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnPre')))
-            pre_page_btn.click()
-            self.wait.until(EC.presence_of_element_located((By.ID, 'form1')))
-            self.dataProcessing()
-            now_page = self.driver.find_element_by_id("labNowPage").text
-            total_page = self.driver.find_element_by_id("labPageCount").text
+        while int(self.now_page) <= int(self.total_page):
+            try:
+                next_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnNext')))
+                next_page_btn.click()
+                # pre_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnPre')))
+                # pre_page_btn.click()
+                self.wait.until(EC.presence_of_element_located((By.ID, 'form1')))
+                self.dataProcessing()
+                self.now_page = self.driver.find_element_by_id("labNowPage").text
+                self.total_page = self.driver.find_element_by_id("labPageCount").text
+            except Exception as e:
+                pass
 
 
     def dataProcessing(self):
-        print('--------------dataProcessing---------------')
         htmlText = self.driver.page_source
         html = etree.HTML(htmlText)
         for index, labTR in enumerate(html.xpath("//table[@class='table']/tbody/tr")):
