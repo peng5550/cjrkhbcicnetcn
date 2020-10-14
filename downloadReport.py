@@ -15,8 +15,6 @@ if not os.path.exists(DATAPATH):
 TABLENAME = "cjrkcompanyinfo"
 sTABLENAME = "cjrkreport"
 
-
-
 class ReportCrawler(object):
 
     def __init__(self):

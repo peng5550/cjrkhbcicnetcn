@@ -163,7 +163,7 @@ class Application(mtk.Frame):
         self.processing = True
         self.com = CompanyCrawler()
         self.report = ReportCrawler()
-        # self.com.start()
+        self.com.start()
         self.report.start()
         self.processing = False
 
