@@ -9,11 +9,13 @@ from sqlConn import connSql
 import re
 import os
 
-DATAPATH = "./data"
-TABLENAME = "cjrkcompanyinfo"
-sTABLENAME = "cjrkreport"
+DATAPATH = os.path.join(os.path.expanduser("~"), 'HTMLDATAFILE').replace("\\", "/")
 if not os.path.exists(DATAPATH):
     os.makedirs(DATAPATH)
+
+TABLENAME = "cjrkcompanyinfo"
+sTABLENAME = "cjrkreport"
+
 
 
 class ReportCrawler(object):
@@ -35,13 +37,13 @@ class ReportCrawler(object):
         # options.add_argument('Upgrade-Insecure-Requests="1"')
         options.add_argument(
             'User-Agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0"')
-        # options.add_argument('-headless')
+        options.add_argument('-headless')
         driver = webdriver.Firefox(firefox_options=options)
         driver.set_page_load_timeout(60)
         driver.set_script_timeout(10)
         return driver
 
-    def __quit_driver(self, driver):
+    def __del__(self, driver):
         # 推出driver
         if driver:
             driver.quit()
@@ -93,7 +95,7 @@ class ReportCrawler(object):
                     "name": labTR.xpath("td")[nameIndexB].xpath("text()")[0].strip(),
                     "age": labTR.xpath("td")[ageIndexB].xpath("text()")[0].strip(),
                     "major": labTR.xpath("td")[majorIndexB].xpath("text()")[0].strip(),
-                    "posilTitles": labTR.xpath("td")[posiTitIndexB].xpath("text()")[0].strip(),
+                    "posilTitles": re.sub(r'(\\)|(")', "", labTR.xpath("td")[posiTitIndexB].xpath("text()")[0].strip()),
                     "comLink": companyName
                 }
                 infoReportList.append(comItem)
@@ -240,12 +242,13 @@ class ReportCrawler(object):
             '''
             for item in infoReportList:
                 if not self.sql.select_data(table_name=sTABLENAME, item_info=item):
+
                     self.sql.insert_data(table_name=sTABLENAME, item_info=item)
 
-                    with open(f"./data/{companyName}.html", "w+", encoding="utf-8")as f:
+                    with open(f"{DATAPATH}/{companyName}.html", "w+", encoding="utf-8")as f:
                         f.write(f"{htmlMakeOne}\n{tableHtmlText}\n{htmlMakeTwo}")
-        except:
-            pass
+        except Exception as e:
+            print(e.args)
 
     def __crawler(self, urlList):
         driver = self.__create_driver()
@@ -256,7 +259,6 @@ class ReportCrawler(object):
                 _content = self.getHtml(driver, wait, link)
                 self.dataProcessing(_content, name, link)
             except Exception as e:
-                print(e.args)
                 with open("exception.txt", "a+", encoding="utf-8")as file:
                     file.write(link + "\n")
             self.now_index += 1

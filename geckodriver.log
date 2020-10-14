@@ -5796,3 +5796,213 @@ Can't find symbol 'eglSwapBuffersWithDamageEXT'.
 
 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 
+1602643431051	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofile4SlkFJ"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: "Could not write session state file " (new Error("_initWorker called too early! Please read the session file from disk first.", "resource:///modules/sessionstore/SessionFile.jsm", 375)) "_initWorker/<@resource:///modules/sessionstore/SessionFile.jsm:375:15\n_initWorker@resource:///modules/sessionstore/SessionFile.jsm:368:12\n_postToWorker@resource:///modules/sessionstore/SessionFile.jsm:410:16\nwrite@resource:///modules/sessionstore/SessionFile.jsm:448:24\nwrite@resource:///modules/sessionstore/SessionFile.jsm:75:32\n_writeState@resource:///modules/sessionstore/SessionSaver.jsm:360:24\n_saveState@resource:///modules/sessionstore/SessionSaver.jsm:294:17\n_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm:344:10\nsaveStateAsyncWhenIdle@resource:///modules/sessionstore/SessionSaver.jsm:191:14\ncallback@resource://gre/modules/Timer.jsm:127:16\n"
+1602643435925	Marionette	INFO	Listening on port 53772
+1602643436058	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602643464276	Marionette	INFO	Stopped listening on port 53772
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1602643503149	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofile31PBXx"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: "Could not write session state file " (new Error("_initWorker called too early! Please read the session file from disk first.", "resource:///modules/sessionstore/SessionFile.jsm", 375)) "_initWorker/<@resource:///modules/sessionstore/SessionFile.jsm:375:15\n_initWorker@resource:///modules/sessionstore/SessionFile.jsm:368:12\n_postToWorker@resource:///modules/sessionstore/SessionFile.jsm:410:16\nwrite@resource:///modules/sessionstore/SessionFile.jsm:448:24\nwrite@resource:///modules/sessionstore/SessionFile.jsm:75:32\n_writeState@resource:///modules/sessionstore/SessionSaver.jsm:360:24\n_saveState@resource:///modules/sessionstore/SessionSaver.jsm:294:17\n_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm:344:10\nsaveStateAsyncWhenIdle@resource:///modules/sessionstore/SessionSaver.jsm:191:14\ncallback@resource://gre/modules/Timer.jsm:127:16\n"
+1602643507471	Marionette	INFO	Listening on port 53834
+1602643507538	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602643552786	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofileVpbjXo"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 351))
+console.error: "Could not load engine baidu@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.error: "Could not load engine bing@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.error: "Could not load engine google@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.error: "Could not load engine amazondotcn@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.error: "Could not load engine wikipedia@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.error: "Could not load engine ddg@search.mozilla.org: TypeError: AddonManagerInternal._getProviderByName(...) is undefined"
+console.warn: SearchService: "_init: abandoning init due to shutting down"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 554: uncaught exception: 2147500036
+[Parent 10540, Gecko_IOThread] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc, line 166
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1602643563439	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofilelQcHtJ"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: "Could not write session state file " (new Error("_initWorker called too early! Please read the session file from disk first.", "resource:///modules/sessionstore/SessionFile.jsm", 375)) "_initWorker/<@resource:///modules/sessionstore/SessionFile.jsm:375:15\n_initWorker@resource:///modules/sessionstore/SessionFile.jsm:368:12\n_postToWorker@resource:///modules/sessionstore/SessionFile.jsm:410:16\nwrite@resource:///modules/sessionstore/SessionFile.jsm:448:24\nwrite@resource:///modules/sessionstore/SessionFile.jsm:75:32\n_writeState@resource:///modules/sessionstore/SessionSaver.jsm:360:24\n_saveState@resource:///modules/sessionstore/SessionSaver.jsm:294:17\n_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm:344:10\nsaveStateAsyncWhenIdle@resource:///modules/sessionstore/SessionSaver.jsm:191:14\ncallback@resource://gre/modules/Timer.jsm:127:16\n"
+1602643568008	Marionette	INFO	Listening on port 53930
+1602643568449	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602643635955	Marionette	INFO	Stopped listening on port 53930
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofileMoldsY"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+1602643644908	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofilejrPWNn"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1602643649252	Marionette	INFO	Listening on port 54014
+1602643649301	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602643685028	Marionette	INFO	Stopped listening on port 54014
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1602643705675	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofileSx4q2Q"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: "Could not write session state file " (new Error("_initWorker called too early! Please read the session file from disk first.", "resource:///modules/sessionstore/SessionFile.jsm", 375)) "_initWorker/<@resource:///modules/sessionstore/SessionFile.jsm:375:15\n_initWorker@resource:///modules/sessionstore/SessionFile.jsm:368:12\n_postToWorker@resource:///modules/sessionstore/SessionFile.jsm:410:16\nwrite@resource:///modules/sessionstore/SessionFile.jsm:448:24\nwrite@resource:///modules/sessionstore/SessionFile.jsm:75:32\n_writeState@resource:///modules/sessionstore/SessionSaver.jsm:360:24\n_saveState@resource:///modules/sessionstore/SessionSaver.jsm:294:17\n_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm:344:10\nsaveStateAsyncWhenIdle@resource:///modules/sessionstore/SessionSaver.jsm:191:14\ncallback@resource://gre/modules/Timer.jsm:127:16\n"
+1602643710394	Marionette	INFO	Listening on port 54069
+1602643710734	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602643763581	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofilebJvYN1"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+console.error: "Could not write session state file " (new Error("_initWorker called too early! Please read the session file from disk first.", "resource:///modules/sessionstore/SessionFile.jsm", 375)) "_initWorker/<@resource:///modules/sessionstore/SessionFile.jsm:375:15\n_initWorker@resource:///modules/sessionstore/SessionFile.jsm:368:12\n_postToWorker@resource:///modules/sessionstore/SessionFile.jsm:410:16\nwrite@resource:///modules/sessionstore/SessionFile.jsm:448:24\nwrite@resource:///modules/sessionstore/SessionFile.jsm:75:32\n_writeState@resource:///modules/sessionstore/SessionSaver.jsm:360:24\n_saveState@resource:///modules/sessionstore/SessionSaver.jsm:294:17\n_saveStateAsync@resource:///modules/sessionstore/SessionSaver.jsm:344:10\nsaveStateAsyncWhenIdle@resource:///modules/sessionstore/SessionSaver.jsm:191:14\ncallback@resource://gre/modules/Timer.jsm:127:16\n"
+1602643768797	Marionette	INFO	Listening on port 54138
+1602643769104	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.
+1602643882696	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "Accept=\"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\"" "Accept-Encoding=\"gzip, deflate\"" "Accept-Language=\"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6\"" "Connection=\"keep-alive\"" "User-Agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0\"" "-foreground" "-no-remote" "-profile" "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\rust_mozprofileBEF37u"
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+ConvertWinError received an unrecognized WinError: 0x7b
+JavaScript error: resource://gre/modules/URIFixup.jsm, line 447: NS_ERROR_MALFORMED_URI: Couldn't build a valid uri
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+ConvertWinError received an unrecognized WinError: 0x7b
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1602643887117	Marionette	INFO	Listening on port 54206
+1602643887191	Marionette	WARN	TLS certificate errors will be ignored for this session
+Can't find symbol 'eglSwapBuffersWithDamageEXT'.

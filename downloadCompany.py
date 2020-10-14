@@ -29,13 +29,13 @@ class CompanyCrawler(object):
         # options.add_argument('Upgrade-Insecure-Requests="1"')
         options.add_argument(
             'User-Agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0"')
-        # options.add_argument('-headless')
+        options.add_argument('-headless')
         driver = webdriver.Firefox(firefox_options=options)
         driver.set_page_load_timeout(60)
         driver.set_script_timeout(10)
         self.driver = driver
 
-    def __quit_driver(self):
+    def __del__(self):
         # 推出driver
         if self.driver:
             self.driver.quit()
@@ -104,8 +104,8 @@ class CompanyCrawler(object):
                     item_info = {"comUrl": comItem["comUrl"]}
                     if not self.sql.select_data(table_name=TABLENAME, item_info=item_info):
                         self.sql.insert_data(table_name=TABLENAME, item_info=comItem)
-                except:
-                    print("http://cjrk.hbcic.net.cn/xxgs/" + labTR.xpath("td[2]/a/@href")[0].strip())
+                except Exception as e:
+                    pass
 
 
 if __name__ == '__main__':

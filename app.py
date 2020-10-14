@@ -4,8 +4,12 @@ from tkinter import ttk
 from downloadCompany import CompanyCrawler
 from downloadReport import ReportCrawler
 from sqlConn import connSql
+import os
 
-DATAPATH = "./data"
+DATAPATH = os.path.join(os.path.expanduser("~"), 'HTMLDATAFILE').replace("\\", "/")
+if not os.path.exists(DATAPATH):
+    os.makedirs(DATAPATH)
+
 TABLENAME = "cjrkcompanyinfo"
 sTABLENAME = "cjrkreport"
 
@@ -20,7 +24,6 @@ class Application(mtk.Frame):
         self.__creatUI()
         self.sql = connSql()
         self.processing = False
-
 
     def __creatUI(self):
         self.searchBox = mtk.LabelFrame(self.root, text="查询", fg="blue")
@@ -160,7 +163,7 @@ class Application(mtk.Frame):
         self.processing = True
         self.com = CompanyCrawler()
         self.report = ReportCrawler()
-        self.com.start()
+        # self.com.start()
         self.report.start()
         self.processing = False
 
