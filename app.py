@@ -127,7 +127,6 @@ class Application(mtk.Frame):
         if res:
             index = 1
             for item in res:
-                print(item)
                 item_data = [
                     index,
                     item[1],

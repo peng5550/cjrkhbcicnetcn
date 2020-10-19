@@ -12,6 +12,10 @@ DATAPATH = os.path.join(os.path.expanduser("~"), 'HTMLDATAFILE').replace("\\", "
 if not os.path.exists(DATAPATH):
     os.makedirs(DATAPATH)
 
+FILEPATH = os.path.join(os.path.expanduser("~"), 'CJRKCRAWLER').replace("\\", "/")
+if not os.path.exists(DATAPATH):
+    os.makedirs(DATAPATH)
+
 TABLENAME = "cjrkcompanyinfo"
 sTABLENAME = "cjrkreport"
 
@@ -35,7 +39,7 @@ class ReportCrawler(object):
         options.add_argument(
             'User-Agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0"')
         options.add_argument('-headless')
-        driver = webdriver.Firefox(firefox_options=options)
+        driver = webdriver.Firefox(executable_path=f"{FILEPATH}/geckodriver.exe", firefox_options=options)
         driver.set_page_load_timeout(60)
         driver.set_script_timeout(10)
         return driver
