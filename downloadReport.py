@@ -13,8 +13,8 @@ if not os.path.exists(DATAPATH):
     os.makedirs(DATAPATH)
 
 FILEPATH = os.path.join(os.path.expanduser("~"), 'CJRKCRAWLER').replace("\\", "/")
-if not os.path.exists(DATAPATH):
-    os.makedirs(DATAPATH)
+if not os.path.exists(FILEPATH):
+    os.makedirs(FILEPATH)
 
 TABLENAME = "cjrkcompanyinfo"
 sTABLENAME = "cjrkreport"

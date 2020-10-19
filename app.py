@@ -5,6 +5,8 @@ from downloadCompany import CompanyCrawler
 from downloadReport import ReportCrawler
 from sqlConn import connSql
 import os
+from tkinter.messagebox import showinfo
+from tkinter import scrolledtext
 
 DATAPATH = os.path.join(os.path.expanduser("~"), 'HTMLDATAFILE').replace("\\", "/")
 if not os.path.exists(DATAPATH):
@@ -76,20 +78,30 @@ class Application(mtk.Frame):
         comInfoBox = mtk.LabelFrame(detailWin, text="公司信息：", fg="blue")
         comInfoBox.place(x=10, y=10, width=480, height=280)
         # 数据展示
-        title = ['1', '2', '3', '4']
-        self.box2 = ttk.Treeview(comInfoBox, columns=title, show='headings')
-        self.box2.place(x=20, y=20, width=420, height=220)
-        self.box2.column('1', width=50, anchor='center')
-        self.box2.column('2', width=50, anchor='center')
-        self.box2.column('3', width=220, anchor='center')
-        self.box2.column('4', width=80, anchor='center')
-        self.box2.heading('1', text='序号')
-        self.box2.heading('2', text='类型')
-        self.box2.heading('3', text='资质及等级')
-        self.box2.heading('4', text='类别')
-        self.VScroll1 = ttk.Scrollbar(self.box, orient='vertical', command=self.box.yview)
-        self.VScroll1.pack(side="right", fill="y")
-        self.box.configure(yscrollcommand=self.VScroll1.set)
+        type_ = mtk.Label(comInfoBox, text="类型：")
+        type_.place(x=10, y=10, width=80, height=25)
+        self.type_text = mtk.Entry(comInfoBox)
+        self.type_text.place(x=100, y=10, width=100, height=25)
+
+        cat_ = mtk.Label(comInfoBox, text="类别：")
+        cat_.place(x=210, y=10, width=80, height=25)
+        self.cat_text = mtk.Entry(comInfoBox)
+        self.cat_text.place(x=300, y=10, width=100, height=25)
+
+        accCom = mtk.Label(comInfoBox, text="受理单位：")
+        accCom.place(x=10, y=55, width=80, height=25)
+        self.accCom_text = mtk.Entry(comInfoBox)
+        self.accCom_text.place(x=100, y=55, width=100, height=25)
+
+        accDate = mtk.Label(comInfoBox, text="受理日期：")
+        accDate.place(x=210, y=55, width=100, height=25)
+        self.accDate_text = mtk.Entry(comInfoBox)
+        self.accDate_text.place(x=300, y=55, width=100, height=25)
+
+        zjdj = mtk.Label(comInfoBox, text="资质及等级：")
+        zjdj.place(x=10, y=95, width=80, height=25)
+        self.zjdj_text = scrolledtext.ScrolledText(comInfoBox, fg="green")
+        self.zjdj_text.place(x=100, y=95, width=370, height=150)
 
     def __creatUI3(self, now_page, total_page, now_index, totals):
         self.process = mtk.Toplevel(self.root)
@@ -146,19 +158,16 @@ class Application(mtk.Frame):
             res = self.sql.select_com(table_name=TABLENAME, comName=comName)
             self.__creatUI2(comName)
             if res:
-                index = 1
-                for comInfo in res:
-                    comItem = [
-                        index,
-                        comInfo[3],
-                        comInfo[4],
-                        comInfo[5]
-                    ]
-                    index += 1
-                    self.box2.insert("", "end", values=comItem)
-                    self.box2.yview_moveto(1.0)
+                comInfo = res[0]
+                self.type_text.insert(mtk.END, comInfo[3])
+                self.cat_text.insert(mtk.END, comInfo[5])
+                self.accCom_text.insert(mtk.END, comInfo[6])
+                self.accDate_text.insert(mtk.END, comInfo[7])
+                self.zjdj_text.insert(mtk.END, comInfo[4])
+
 
     def crawlerData(self):
+        showinfo("提示信息", "开始获取数据,请不要关闭软件（可点击查看进度查看任务进度）.")
         self.processing = True
         self.com = CompanyCrawler()
         self.report = ReportCrawler()
@@ -173,6 +182,7 @@ class Application(mtk.Frame):
 
     def crawlerProcessing(self):
         if not self.processing:
+            showinfo("提示信息", "当前无任务.")
             return
         self.__creatUI3(self.com.now_page, self.com.total_page, self.report.now_index, self.report.totals)
 
