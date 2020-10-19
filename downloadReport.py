@@ -45,7 +45,6 @@ class ReportCrawler(object):
         return driver
 
     def __del__(self, driver):
-        # 推出driver
         if driver:
             driver.quit()
 
