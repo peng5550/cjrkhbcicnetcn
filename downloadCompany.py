@@ -35,7 +35,7 @@ class CompanyCrawler(object):
         driver.set_script_timeout(10)
         self.driver = driver
 
-    def __del__(self):
+    def __quit(self):
         # 推出driver
         if self.driver:
             self.driver.quit()
@@ -47,6 +47,8 @@ class CompanyCrawler(object):
         self.driver.maximize_window()
         self.search_data()
         self.goNextPage()
+        time.sleep(5)
+        self.__quit()
 
     def search_data(self):
         self.wait.until(EC.presence_of_element_located((By.ID, 'form1')))
@@ -72,6 +74,7 @@ class CompanyCrawler(object):
         # last_page_btn.click()
 
         while int(self.now_page) <= int(self.total_page):
+        # while int(self.now_page) <= 5:
             try:
                 next_page_btn = self.wait.until(EC.presence_of_element_located((By.ID, 'lbtnNext')))
                 next_page_btn.click()
@@ -83,7 +86,6 @@ class CompanyCrawler(object):
                 self.total_page = self.driver.find_element_by_id("labPageCount").text
             except Exception as e:
                 pass
-
 
     def dataProcessing(self):
         htmlText = self.driver.page_source

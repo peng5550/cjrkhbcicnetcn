@@ -7,6 +7,7 @@ from lxml import etree, html
 from sqlConn import connSql
 import re
 import os
+import time
 
 DATAPATH = os.path.join(os.path.expanduser("~"), 'HTMLDATAFILE').replace("\\", "/")
 if not os.path.exists(DATAPATH):
@@ -44,7 +45,7 @@ class ReportCrawler(object):
         driver.set_script_timeout(10)
         return driver
 
-    def __del__(self, driver):
+    def __quit(self, driver):
         if driver:
             driver.quit()
 
@@ -263,9 +264,13 @@ class ReportCrawler(object):
                     file.write(link + "\n")
             self.now_index += 1
 
+        time.sleep(5)
+        self.__quit(driver)
+
     def start(self):
         urlList = self.getUrlFromSql()
         self.__crawler(urlList)
+
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ build_exe_options = {"packages": ["os", "tkinter", "pymysql", "openpyxl", "mttki
                      'include_files': [
                          os.path.join(os.path.dirname(__file__), 'downloadCompany.py'),
                          os.path.join(os.path.dirname(__file__), 'downloadReport.py'),
-                         os.path.join(os.path.dirname(__file__), 'geckodriver.exe'),
+                         # os.path.join(os.path.dirname(__file__), 'geckodriver.exe'),
                          os.path.join(os.path.dirname(__file__), 'sqlConn.py'),
                          os.path.join(os.path.dirname(__file__), 'app.ico'),
                          os.path.join(PYTHON_INSTALL_DIR, 'DLLs', 'tcl86t.dll'),
@@ -30,7 +30,7 @@ if sys.platform == "win32":
 
 # "bdist_msi": bdist_msi_options
 setup(name="searchTools",
-      version="1.0",
+      version="2.0",
       description="查询工具",
       options={"build_exe": build_exe_options},
       executables=[Executable("app.py",
